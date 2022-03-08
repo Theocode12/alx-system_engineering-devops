@@ -1,2 +1,2 @@
 #!/bin/bash
-find . -typr f -name "*.js" | rm
+find . -typr f -name "*.js" -delete
