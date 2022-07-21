@@ -1,0 +1,10 @@
+#!/usr/bin/env bash
+# Usage of until command
+
+counter=1
+
+until [ $counter -gt 10 ]
+do
+    echo "Best School"
+    (( counter++ ))
+done
