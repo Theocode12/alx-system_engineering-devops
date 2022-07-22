@@ -1,0 +1,4 @@
+#!/usr/bin/env bash
+# A scripts that printsits own id
+
+echo "$$"
