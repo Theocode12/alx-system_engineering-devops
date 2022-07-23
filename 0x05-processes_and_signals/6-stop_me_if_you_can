@@ -1,0 +1,4 @@
+#!/usr/bin/env bash
+# A script that sends a signal to kill running process
+
+pkill -15 -u "$USER"
