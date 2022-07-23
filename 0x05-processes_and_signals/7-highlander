@@ -1,0 +1,14 @@
+#!/usr/bin/env bash
+# A script that sends a signal to kill running process
+handler_sigterm ()
+{
+    echo "I am invincible!!!"
+}
+
+trap handler_sigterm SIGTERM 
+
+while true
+do
+    echo "To infinity and beyond"
+    sleep 2
+done
