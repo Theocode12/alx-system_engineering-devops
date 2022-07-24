@@ -1,0 +1,11 @@
+#!/usr/bin/env bash
+# A script that sends a signal to kill running process
+
+FILENAME=/tmp/my_process
+touch $FILENAME
+
+while true
+do
+    echo "I am alive!" >> $FILENAME
+    sleep 2
+done
