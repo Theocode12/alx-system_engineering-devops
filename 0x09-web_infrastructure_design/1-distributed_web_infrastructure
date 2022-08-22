@@ -1,0 +1,26 @@
+LINK TO DIAGRAM
+https://drive.google.com/file/d/1-iQrZT6fE_lfCLoACcUoIC2ALBy6WNgi/view?usp=sharing
+
+
+ANSWERS TO QUESTION ASKEDANSWERS TO QUESTION ASKED
+
+Two server were added this is done to improve redundancy
+and speed instead of contantly relying on a single server
+to perform all functions.
+
+The distribution algorithm used in this project is the
+round robin algorithm in which each server is assigned a
+client one after another.
+
+- The load balancer in the diagram above is enabling an Active-Active setup whereby the three servers are running at the same time and displaying or hosting same content
+
+- In the database primary replica (Master-Slave) cluster, the slave server as the replica and acts as a fallback when the master has issues and stops running. The master is the main database the system use to get and store user information
+
+- The Primary Node in the application is the main node which the application uses to serve clients and the replica is the not necessary node but present to use as a fallback and to prevent SPOF(Single Point Of Failure)
+
+- The SPOF(Single Point of Failure) is spotted in the load balancer and database in the diagram, when the load balancer is faulty and has issues
+the system collapses ultimately
+
+- The infrastructure lack the use of Firewalls/security to filter requests coming in from the pulic network to the private networks and by not using firewalls the system is prone to cyber attacks which can destroy the system
+
+- The infrastructure lacks monitoring which is needed to read the metrics of the servers and alert if the server's cpu or disk usage is high or there's something wrong with the application

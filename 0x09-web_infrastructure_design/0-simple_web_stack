@@ -1,0 +1,81 @@
+LINK TO DIAGRAM
+https://drive.google.com/file/d/1-Z7UheiD5YKJomLnPXxuzkzTHn5uQpYv/view?usp=sharing
+
+
+ANSWERS TO QUESTION ASKED
+
+What is a server?
+
+A server is a device, a virtual device or computer program or
+providing functionality for other programs or devices, called “clients”.
+Technically, any computer can be used a server but the costs can
+be really high(e.g constant power supply to aviod downtime) and
+also the amount of resources the function of a server takes(e.g RAM, ROM), for
+these reasons specialized computers are made and kept at data center where
+all the resources needed are available at all times.
+
+
+What is the role of the domain name?
+
+The domain name in a raw context bridges the gap between human
+and computers. Computer understand numbers(binary) but this
+can be hard for humans who are much more comfortable with words.
+So domain name are purely for humans for the need to remember the
+website instead of numbers. This domain name is then converted to
+numbers(IP Address) by the Domain Name System(DNS) for computers to
+understand.
+
+
+What type of DNS record www is in www.foobar.com?
+
+www in www.foobar.com is a CNAME(canonical name) record.
+
+
+What is the role of the web server?
+
+The web server accepts http request sent from clients.
+The main job of a web server is to display website content through
+storing, processing and delivering webpages to users. Besides HTTP,
+web servers also support SMTP (Simple Mail Transfer Protocol) and FTP
+(File Transfer Protocol), used for email, file transfer and storage.
+This content could be static web pages or dynamically created or it can
+be generated at the time of the request (dynamic content) by another
+program that communicates with the server software.
+
+
+What is the role of the application server?
+
+The application server provides business logic behind any application.
+It often serves as the middle man between the web sever and the database
+server. It accepts request from the webserver, collects the information
+need from the datebase, returns it back to the webserver to inturn return
+to the client.
+
+
+What is the role of the database?
+
+Its main role is to receive requests from client machines, search
+for the required data, and pass back the results.
+
+
+What is the server using to communicate with the computer of the user
+requesting the website?
+
+The server uses Hypertext Transfer Protocol(HTTP) to communicate with the client
+and the client does the same.
+
+
+ISSUES WITH THIS INFRASTRUCTURE
+
+The single point of failure is located at the server. Why?. This is because
+if the server experiences down time there no backup server to deliver services
+to incoming clients. This is costly because the company loses money and the
+user is left frustrated.
+
+Also when maintainance is need to be done such such as deploying new code,
+we have a big problem on our hand because the server will need to be restarted
+and this may lead to loss of information for clients who are in session.
+
+When there are many client try to access this server, the server might get
+overwhelmed and stop operating at optimal speed, another disadvantage of
+this infrastructure.
