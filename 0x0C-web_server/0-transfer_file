@@ -13,4 +13,4 @@ then
 	exit
 fi
 
-scp StrictHostKeyChecking=no -i "$SSH_KEY" "$FILE" "$USER@$IP:~/"
+scp -o StrictHostKeyChecking=no -i "$SSH_KEY" "$FILE" "$USER@$IP:~/"
