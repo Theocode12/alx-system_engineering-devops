@@ -3,7 +3,7 @@
 
 apt update
 apt install nginx -y
-echo Hello World! > /var/www/html/index.html
+echo Hello World! > /var/www/html/index.nginx-debian.html
 sed '/server_name/ a \\tlocation /redirect_me {\n\t\treturn 301 https://www.linkedin.com/in/valentine-chidubem-9a076620a;\n\t}' /etc/nginx/sites-available/default > /etc/nginx/sites-available/default_2
 sudo cp /etc/nginx/sites-available/default_2 /etc/nginx/sites-available/default
 sudo rm /etc/nginx/sites-available/default_2
