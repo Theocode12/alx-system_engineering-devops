@@ -1,9 +1,10 @@
 #!/usr/bin/env bash
 # Creates a redirect
 
-apt update
-apt install nginx -y
-echo Hello World! > /var/www/html/index.nginx-debian.html
+apt-get update
+apt-get -y install nginx
+service nginx start
+echo "Hello World!" > /var/www/html/index.nginx-debian.html
 sed '/server_name/ a \\tlocation /redirect_me {\n\t\treturn 301 https://www.linkedin.com/in/valentine-chidubem-9a076620a;\n\t}' /etc/nginx/sites-available/default > /etc/nginx/sites-available/default_2
 cp /etc/nginx/sites-available/default_2 /etc/nginx/sites-available/default
 rm /etc/nginx/sites-available/default_2
