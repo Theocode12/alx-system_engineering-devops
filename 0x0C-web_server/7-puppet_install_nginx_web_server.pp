@@ -1,5 +1,5 @@
 # A puppet manifest to configure ubuntu
-nstalls a Nginx server
+# installs a Nginx server
 
 exec {'install Nginx':
   provider => shell,
