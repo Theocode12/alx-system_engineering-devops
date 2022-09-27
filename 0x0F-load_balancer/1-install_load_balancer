@@ -1,16 +1,17 @@
 #!/usr/bin/env bash
 #installing and configuring load balancers
-apt-get update
-apt-get install --no-install-recommends software-properties-common
-add-apt-repository ppa:vbernat/haproxy-2.6
-apt-get install haproxy=2.6.\*
-service haproxy start
-sed -i "/504.http/a \
+sudo apt-get update -y
+sudo apt-get install --no-install-recommends software-properties-common -y
+sudo add-apt-repository ppa:vbernat/haproxy-2.6 -y
+sudo apt-get install haproxy=2.6.\* -y
+sudo service haproxy start
+sudo sed -i "/504.http/a \
 	\\\n\nbackend myservers\
 	\n\tbalance roundrobin\
 	\n\tserver 9089-web-01 3.230.166.53\
 	\n\tserver 9084-web-02 3.238.228.250\
 	\n\nfrontend myfrontend\
-	\n\tbind :80\
-	\n\tdefault_backend myservers" /etc/haproxy.cfg
-service haproxy restart
+	\n\tbind *:80\
+	\n\tmode http\
+	\n\tdefault_backend myservers" /etc/haproxy/haproxy.cfg
+sudo service haproxy restart
