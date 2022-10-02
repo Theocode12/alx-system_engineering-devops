@@ -2,4 +2,3 @@
 # A script that configures nginx to run at port 80
 sed -i 's/8080/80/g' /etc/nginx/sites-enabled/default
 service nginx restart
-truncate -s 0 /run/nginx.pid
