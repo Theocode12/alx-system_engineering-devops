@@ -11,19 +11,19 @@ def main():
     """
     Main function
     """
-    id = argv[1]
+
     emp_resp = requests.get(
                 "https://jsonplaceholder.typicode.com/users/{}".
-                format(id)).json()
+                format(argv[1])).json()
 
     emp_name = emp_resp.get('name')
 
-    payload = {'userId': {id}}
+    payload = {'userId': {argv[1]}}
     total_task = requests.get(
                         "https://jsonplaceholder.typicode.com/todos",
                         payload).json()
 
-    payload = {'userId': {id}, 'completed': 'true'}
+    payload = {'userId': {argv[1]}, 'completed': 'true'}
     task_done_resp = requests.get(
                             "https://jsonplaceholder.typicode.com/todos",
                             payload).json()
@@ -36,4 +36,4 @@ def main():
 
 
 if __name__ == "__main__":
-    main()
+   main()
