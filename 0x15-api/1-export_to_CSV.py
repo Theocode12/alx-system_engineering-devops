@@ -22,7 +22,7 @@ if __name__ == "__main__":
     total_task = requests.get(todo_url).json()
 
     with open('{}.csv'.format(emp_id), 'w') as csvfile:
-        csvwriter = csv.writer(csvfile)
+        csvwriter = csv.writer(csvfile, quoting=csv.QUOTE_ALL)
 
         for task in total_task:
             row = [emp_id, emp_name, task.get('completed'), task.get('title')]
