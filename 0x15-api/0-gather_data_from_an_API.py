@@ -18,12 +18,12 @@ def main():
 
     emp_name = emp_resp.get('name')
 
-    payload = {'userId': 2}
+    payload = {'userId': {id}}
     total_task = requests.get(
                         "https://jsonplaceholder.typicode.com/todos",
                         payload).json()
 
-    payload = {'userId': 2, 'completed': 'true'}
+    payload = {'userId': {id}, 'completed': 'true'}
     task_done_resp = requests.get(
                             "https://jsonplaceholder.typicode.com/todos",
                             payload).json()
