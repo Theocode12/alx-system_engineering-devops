@@ -16,16 +16,19 @@ if __name__ == "__main__":
     emp_name = emp_resp.get('name')
 
     payload = {'userId': {argv[1]}}
-    todo_url = "https://jsonplaceholder.typicode.com/todos"
+    todo_url = "https://jsonplaceholder.typicode.com/todos?userId={}".format(
+               argv[1])
 
-    total_task = requests.get(todo_url, payload).json()
+    total_task = requests.get(todo_url).json()
 
-    payload = {'userId': {argv[1]}, 'completed': 'true'}
-    task_done_resp = requests.get(todo_url, payload).json()
+    task_done = 0
+    for task in total_task:
+        if task.get('completed'):
+            task_done += 1
 
     print("Employee {} is done with tasks({}/{}):".
-          format(emp_name, len(task_done_resp), len(total_task)))
+          format(emp_name, task_done, len(total_task)))
 
-    for task in task_done_resp:
-        print("\t {}".format(task.get('title')))
-
+    for task in total_task:
+        if task.get('completed'):
+            print("\t {}".format(task.get('title')))
