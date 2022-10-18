@@ -14,14 +14,14 @@ if __name__ == "__main__":
 
     emp_resp = requests.get(emp_url).json()
 
-    emp_name = emp_resp.get('name')
+    emp_name = emp_resp.get('username')
 
     payload = {'userId': emp_id}
     todo_url = "https://jsonplaceholder.typicode.com/todos"
 
     total_task = requests.get(todo_url, payload).json()
 
-    with open('USER_ID', 'w') as csvfile:
+    with open('USER_ID.csv', 'w') as csvfile:
         csvwriter = csv.writer(csvfile)
 
         for task in total_task:
