@@ -16,10 +16,10 @@ if __name__ == "__main__":
 
     emp_name = emp_resp.get('username')
 
-    payload = {'userId': emp_id}
-    todo_url = "https://jsonplaceholder.typicode.com/todos"
+    todo_url = "https://jsonplaceholder.typicode.com/todos?userId={}".format(
+                                                                        emp_id)
 
-    total_task = requests.get(todo_url, payload).json()
+    total_task = requests.get(todo_url).json()
 
     with open('USER_ID.csv', 'w') as csvfile:
         csvwriter = csv.writer(csvfile)
