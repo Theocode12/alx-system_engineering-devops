@@ -19,13 +19,15 @@ if __name__ == "__main__":
 
     total_task = requests.get(todo_url).json()
 
+    emp_task = []
+    for task in total_task:
+        row = {
+                    "task": task.get('title'),
+                    "completed": task.get('completed'),
+                    "username": emp_name
+                    }
+        emp_task.append(row)
+
     with open(filename, 'w') as jsfile:
-        for task in total_task:
-            row = {
-                    emp_id: [
-                        {"task": task.get('title'),
-                         "completed": task.get('completed'),
-                         "username": emp_name}
-                    ]
-                }
-            json.dump(row, jsfile)
+        js_text = {emp_id: emp_task}
+        json.dump(js_text, jsfile)
