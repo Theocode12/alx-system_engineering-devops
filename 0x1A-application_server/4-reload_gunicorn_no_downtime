@@ -1,3 +1,3 @@
-#!/bin/bash
+#!/usr/bin/env bash
 # reloading gunicorn without downtime
 kill -HUP $(pgrep gunicorn | head -n 1)
